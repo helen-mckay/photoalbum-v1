@@ -1,0 +1,13 @@
+compatibility_flags = [ "nodejs_compat_v2" ]
+name = 'photoalbum-v1'
+compatibility_date = "2025-09-25"
+pages_build_output_dir = "dist"
+
+[observability]
+enabled = true
+
+[vars]
+PUBLIC_CLERK_PUBLISHABLE_KEY="pk_live_Y2xlcmsubmF1cnppbmUuY29tJA"
+PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL="/protected"
+PUBLIC_CLERK_SIGN_IN_URL="/sign-in"
+PUBLIC_CLERK_SIGN_UP_URL="/sign-up"

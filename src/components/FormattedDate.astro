@@ -1,0 +1,11 @@
+---
+
+const { intDate, classStuff } = Astro.props;
+
+const formattedDate = new Date(intDate);
+
+// FormattedDate
+    // just a component to help with rendering a date in a formatted way
+---
+
+<time class={classStuff} tabindex="0">{formattedDate.toLocaleString()}</time>

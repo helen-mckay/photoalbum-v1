@@ -1,0 +1,83 @@
+---
+import CommentForm from "./CommentForm.astro";
+import CommentsList from "./CommentsList.astro";
+const {date, title, image, altText, uuid } = Astro.props.data;
+const { isEven } = Astro.props;
+
+// Slide
+    // these are the posts! there's a lot going on here so I'll comment line by line
+
+// every Slide gets this styling
+let classStuff = "min-h-screen place-content-center md:top-0 md:sticky";
+
+// alternating backgrounds
+if (isEven)
+{
+    classStuff += " slide-a";
+}
+else
+{
+    classStuff += " slide-b";
+}
+
+// all the polaroids get this styling
+let polaroidClassStuff = "card bg-neutral-content p-4 pb-8 rounded shadow-xl max-w-[250px] md:max-w-[350px] lg:max-w-[450px] hover:rotate-0 focus:rotate-0 active:rotate-0 transition-all";
+
+// calculating a random tilt for the polaroid
+let randomPolaroidTilt = Math.floor(Math.random() * (Math.floor(6) - Math.ceil(0)) + Math.ceil(0));
+let tiltClass = "";
+
+// adding the random tilt to the classes for the polaroid
+switch(randomPolaroidTilt)
+{
+    case 0:
+        tiltClass += "-rotate-3";
+        break;
+    case 1:
+        tiltClass += "-rotate-2";
+        break;
+    case 2:
+        tiltClass += "-rotate-1";
+        break;
+    case 3:
+        tiltClass += "rotate-1";
+        break;
+    case 4:
+        tiltClass += "rotate-2";
+        break;
+    default:
+        tiltClass += "rotate-3";
+        break;
+}
+
+polaroidClassStuff = tiltClass + " " + polaroidClassStuff;
+
+// then, below:
+    // each slide has a hidden carousel
+    // part one of the carousel is the polaroid
+    // part two of the carousel is the comments section
+
+---
+
+<div class={classStuff}>
+    <div class="carousel w-full">
+        <div id=`${uuid}-memory` class="carousel-item min-h-screen pt-1 relative w-full flex flex-col md:flex-row place-items-center place-content-center gap-2">
+            <div class={polaroidClassStuff}>
+                <img class="w-full aspect-square object-cover border border-gray-100" tabindex="0" loading="lazy" src={image?.src} alt={altText}/>
+                <h2 class="font-bold mt-2 text-3xl md:text-4xl lg:text-5xl text-balance text-center text-neutral" tabindex="0">{title}</h2>
+            </div>
+            <div>
+                <a class="btn btn-secondary noise" href=`#${uuid}-discussion`>Discussion <span aria-hidden>&rightarrow;</span></a>
+            </div>
+        </div>
+        <div id=`${uuid}-discussion` class="carousel-item min-h-screen pt-1 relative w-full flex flex-col-reverse md:flex-row place-items-center place-content-center gap-2">
+            <div>
+                <a class="btn btn-secondary noise" href=`#${uuid}-memory`><span aria-hidden>&leftarrow;</span> Memory</a>
+            </div>
+            <div class="flex flex-col gap-2">
+                <CommentsList uuid={uuid}/>
+                <CommentForm uuid={uuid}/>
+            </div>
+        </div>    
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "photoalbum-v1",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --remote",
+    "build": "astro build --remote",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.9",
+    "@astrojs/db": "^0.18.0",
+    "@astrojs/node": "^9.4.4",
+    "@clerk/astro": "^2.13.2",
+    "@libsql/client": "^0.15.15",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.14.0",
+    "daisyui": "^5.1.22",
+    "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19"
+  }
+}

@@ -1,0 +1,21 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Slide from '../components/Slide.astro';
+
+import { getCollection } from "astro:content";
+
+// the home page!
+	// queries the Astro collection for the posts
+	// orders these posts with newest on top
+	// maps these posts with Slide components
+		// and passes to Slide component whether it is evne or odd
+
+const allPosts = (await getCollection('posts')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+---
+
+<MainLayout>
+	{allPosts.map((post, index) => <Slide data={post.data} isEven={index % 2 === 0 ? true : false}/>)}
+</MainLayout>

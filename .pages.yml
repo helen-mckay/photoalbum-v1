@@ -1,0 +1,43 @@
+media: public/media
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/posts
+    view:
+      fields: [ date, title, image, altText ]
+    fields:
+      - name: date
+        label: Date
+        type: date
+        options:
+          time: true
+          format: MM/dd/yyyy HH:mm
+        required: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: image
+        label: Image
+        type: image
+        options:
+          extensions: [ jpg, png ]
+        required: true
+      - name: altText
+        label: Alt Text
+        type: string
+        required: true
+      - name: uuid
+        label: uuid
+        type: uuid
+        options:
+          editable: false
+          visible: false
+  - name: info
+    label: Info page
+    type: file
+    path: src/pages/info.md
+    fields:
+      - { name: body, label: Body, type: rich-text }
+      - { name: layout, type: string, hidden: true, default: '../layouts/InfoLayout.astro' }

@@ -1,0 +1,59 @@
+---
+import "../global.css";
+import { SignedIn, SignOutButton } from "@clerk/astro/components";
+
+// the base layout that all the pages get, including the other layouts
+
+// calculate the date to render in the footer
+const startYear = 2025;
+const currYear = new Date().getFullYear();
+let timeSpan = startYear.toString();
+
+if (currYear > startYear)
+{
+	timeSpan += "–";
+	timeSpan += currYear.toString();
+}
+
+// Clerk provides SignedIn and SignedOut components
+	// these allow for conditional rendering depending on whether the user is logged in
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Built by Helen McKay, this is a photo album with password protection and comments."/>
+		<meta name="robot" content="nofollow, noindex"/>
+		<title>Photo Album by Helen McKay</title>
+	</head>
+	<body data-theme="light">
+		<SignedIn>
+            <div class="navbar z-10 shadow-sm bg-neutral flex flex-row border-b-2 border-b-accent sys-font">
+				<div class="navbar-start">
+					<a class="text-neutral-content text-xl" href="/">Photo Album</a>
+				</div>
+				<div class="navbar-end">
+					<SignOutButton asChild><button class="btn btn-secondary">Sign Out</button></SignOutButton>
+				</div>
+			</div>
+        </SignedIn>
+        <slot/>
+		<footer class="footer sm:footer-horizontal bg-neutral p-10 border-t-2 border-t-accent sys-font">
+			<aside>
+				<h3 class="uppercase font-bold text-neutral-content">Photo Album</h3>
+				<p class="text-xs lg:text-sm text-neutral-content">&copy; {timeSpan}, Helen McKay. All Rights Reserved.</p>
+				<p class="text-xs lg:text-sm text-neutral-content">Built with love by Helen McKay.</p>
+			</aside>
+			<SignedIn>
+				<nav>
+					<h3 class="uppercase font-bold text-neutral-content">Links</h3>
+					<a class="text-neutral-content link text-xs lg:text-sm" href="/info">About this Project</a>
+					<a class="text-neutral-content link text-xs lg:text-sm" href="/privacy">Privacy Policy and Terms of Use</a>
+				</nav>
+			</SignedIn>
+		</footer>		
+	</body>
+</html>
