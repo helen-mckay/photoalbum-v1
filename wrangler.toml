@@ -7,7 +7,7 @@ pages_build_output_dir = "dist"
 enabled = true
 
 [vars]
-PUBLIC_CLERK_PUBLISHABLE_KEY="pk_live_Y2xlcmsubmF1cnppbmUuY29tJA"
+PUBLIC_CLERK_PUBLISHABLE_KEY="pk_live_Y2xlcmsucGhvdG9hbGJ1bS5oZWxlbm1ja2F5LmRldiQ"
 PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL="/protected"
 PUBLIC_CLERK_SIGN_IN_URL="/sign-in"
 PUBLIC_CLERK_SIGN_UP_URL="/sign-up"
