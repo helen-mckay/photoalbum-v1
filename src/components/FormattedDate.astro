@@ -1,11 +1,11 @@
 ---
-import dayjs from 'dayjs';
+
 const { intDate, classStuff } = Astro.props;
 
-const date = dayjs(intDate).format();
+const formattedDate = new Date(intDate);
 
 // FormattedDate
     // just a component to help with rendering a date in a formatted way
 ---
 
-<time class={classStuff}>{date}</time>
+<time class={classStuff} tabindex="0">{formattedDate.toLocaleString()}</time>
