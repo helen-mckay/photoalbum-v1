@@ -2,10 +2,10 @@
 
 const { intDate, classStuff } = Astro.props;
 
-const formattedDate = new Date(intDate);
+const formattedDate = new Date(intDate).toLocaleString("en-US", {timeZone: "America/Chicago"});
 
 // FormattedDate
     // just a component to help with rendering a date in a formatted way
 ---
 
-<time class={classStuff} tabindex="0">{formattedDate.toLocaleString()}</time>
+<time class={classStuff} tabindex="0">{formattedDate}</time>
