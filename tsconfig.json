@@ -4,5 +4,7 @@
   "exclude": ["dist"],
   "compilerOptions": {
     "types": ["@cloudflare/workers-types"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   }
 }
