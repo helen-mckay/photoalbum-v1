@@ -18,23 +18,29 @@ export const server = {
     }),
     handler: async ({ post_uuid, comment_author, comment_body }, context) => {
 
-      if (!context.locals.auth().isAuthenticated)
-      {
-        // console.log("you can't submit a post without logging in!");
-        return null;
-      }
+      // for the sake of live demonstration, comments are disabled
 
-      const comment = await db
-        .insert(CommentsDB)
-        .values({
-          post_uuid,
-          created_at: Date.now(),
-          comment_author,
-          comment_body
-        })
-        .returning();
+      return null;
+      
+      // if you are running this project locally, delete the above and uncomment the below
+      
+      // if (!context.locals.auth().isAuthenticated)
+      // {
+      //   // console.log("you can't submit a post without logging in!");
+      //   return null;
+      // }
 
-      return comment[0];
+      // const comment = await db
+      //   .insert(CommentsDB)
+      //   .values({
+      //     post_uuid,
+      //     created_at: Date.now(),
+      //     comment_author,
+      //     comment_body
+      //   })
+      //   .returning();
+
+      // return comment[0];
       
     },
   }),
