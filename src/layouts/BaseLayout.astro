@@ -1,6 +1,6 @@
 ---
 import "../global.css";
-import { SignedIn, SignOutButton } from "@clerk/astro/components";
+import { SignedIn, SignedOut, SignOutButton } from "@clerk/astro/components";
 
 // the base layout that all the pages get, including the other layouts
 
@@ -47,10 +47,13 @@ if (currYear > startYear)
 				<p class="text-xs lg:text-sm text-neutral-content">&copy; {timeSpan}, Helen McKay. All Rights Reserved.</p>
 				<p class="text-xs lg:text-sm text-neutral-content">Built with love by Helen McKay.</p>
 			</aside>
+			<SignedOut>
+				<a href="text-neutral-content link text-xs lg:text-sm" href="/privacy">Privacy Policy and Terms of Use</a>
+			</SignedOut>
 			<SignedIn>
 				<nav>
 					<h3 class="uppercase font-bold text-neutral-content">Links</h3>
-					<a class="text-neutral-content link text-xs lg:text-sm" href="/info">About this Project</a>
+					<a class="text-neutral-content link text-xs lg:text-sm" href="/info">About This Project</a>
 					<a class="text-neutral-content link text-xs lg:text-sm" href="/privacy">Privacy Policy and Terms of Use</a>
 				</nav>
 			</SignedIn>

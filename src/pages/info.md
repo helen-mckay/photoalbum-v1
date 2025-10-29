@@ -5,7 +5,7 @@ layout: ../layouts/InfoLayout.astro
 
 For my dear friend Naurin Nasim, I built a photo album website to serve as her digital scrapbook. She requested that the site be password-protected to grant access to only her trusted friends (reminiscent of old-school secret keeper journals) as well as comment sections so that visiting friends may write something on the posts. Her site can be found at: [https://naurzine.com](https://naurzine.com)
 
-The version you are currently viewing is for featuring on my portfolio. The rest of my portfolio can viewed at: [https://helenmckay.dev](https://helenmckay.dev)
+The version you are currently viewing is for featuring on my portfolio. The rest of my portfolio can viewed at: [https://helenmckay.dev](https://helenmckay.dev). Comments are DISABLED. Attempted comment submissions do not write to the database.
 
 I found this project challenging and incredibly rewarding to make. It went through many iterations (and hit a lot of roadblocks), but the final version was built using the following:
 
