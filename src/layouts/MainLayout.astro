@@ -7,21 +7,20 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
 
 <BaseLayout>
     <section id="landing" class="min-h-screen flex flex-col place-content-center place-items-center px-4">
-        <div id="landing-content" class="flex flex-col place-content-center place-items-center gap-2">
-            <h1 class="text-4xl md:text-6xl lg:text-8xl text-center text-balance text-primary font-bold text-shadow-lg mb-8">Welcome to my photo album</h1>
+        <div id="landing-content" class="flex flex-col items-center gap-2">
+            <h1 class="text-4xl md:text-6xl lg:text-8xl text-center text-balance font-bold text-shadow-lg mb-8">Welcome to my photo album</h1>
             <SignedOut>
                 <SignInButton asChild mode="modal">
-                    <button class="btn btn-secondary btn-lg md:btn-xl lg:btn-2xl noise">Sign In</button>
+                    <button class="btn btn-primary btn-lg md:btn-xl lg:btn-2xl noise">Sign In</button>
                 </SignInButton>
             </SignedOut>
             <SignedIn>
                 <a class="btn btn-secondary text-lg md:text-xl lg:text-2xl" href="/info">Learn about this project</a>
-                <div class="divider divider-accent">
-                </div>
-                <p class="text-base-content text-lg md:text-xl lg:text-2xl">Scroll for memories.</p>
-                <p class="text-base-content text-md md:text-lg lg:text-xl italic">(Or use <kbd class="kbd text-md md:text-lg lg:text-xl">tab</kbd>).</p>
-                <p class="text-base-content text-md md:text-lg lg:text-xl">On touch screens, you can swipe left and right to switch between memories and discussions.</p>
-                <p class="text-base-content text-md md:text-lg lg:text-xl">Before commenting on posts, please <a class="link" href="/privacy">read the Privacy Policy and Terms of Use.</a></p>
+                <div class="divider divider-accent"></div>
+                <p class="text-lg md:text-xl lg:text-2xl">Scroll for memories.</p>
+                <p class="text-md md:text-lg lg:text-xl italic">(Or use <kbd class="kbd text-md md:text-lg lg:text-xl">tab</kbd>).</p>
+                <p class="text-md md:text-lg lg:text-xl">On touch screens, you can swipe left and right to switch between memories and discussions.</p>
+                <p class="text-md md:text-lg lg:text-xl">Before commenting on posts, please <a class="link" href="/privacy">read the Privacy Policy and Terms of Use.</a></p>
             </SignedIn>
         </div>
     </section>

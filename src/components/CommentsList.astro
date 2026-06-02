@@ -13,7 +13,7 @@ const { rows } = await turso.execute({
 });
 ---
 
-{rows.length === 0 && <p class="md:text-lg lg:text-xl bg-neutral text-neutral-content p-10 rounded comments-list w-[250px] md:w-[350px] lg:w-[450px]">There's no comments (yet)</p>}
-{rows.length >= 1 && <div id=`${uuid}-2` class="comments-list rounded p-4 bg-neutral w-[250px] md:w-[350px] lg:w-[450px] max-h-[400px] overflow-y-auto shadow-md">
-    <div class="comments-list bg-neutral text-neutral-content rounded"><ul class="list flex flex-col gap-2">{rows.map(r => <div class="list-col border-b-1 p-2 flex flex-col"><h3 tabindex="0" class="font-bold">{r.comment_author} <span class="font-normal"> wrote:</span></h3><p tabindex="0" class="m-2">{r.comment_body}</p><FormattedDate classStuff="opacity-80 place-self-end text-xs" intDate={r.created_at}/></div>)}</ul></div>
+{rows.length === 0 && <p class="md:text-lg lg:text-xl p-10 rounded comments-list w-[250px] md:w-[350px] lg:w-[450px]">There's no comments (yet)</p>}
+{rows.length >= 1 && <div id=`${uuid}-2` class="comments-list rounded p-4 w-[250px] md:w-[350px] lg:w-[450px] max-h-[400px] overflow-y-auto shadow-md">
+    <div class="comments-list rounded"><ul class="list flex flex-col gap-2">{rows.map(r => <div class="list-col border-b-1 p-2 flex flex-col"><h3 tabindex="0" class="font-bold">{r.comment_author} <span class="font-normal"> wrote:</span></h3><p tabindex="0" class="m-2">{r.comment_body}</p><FormattedDate classStuff="opacity-80 place-self-end text-xs" intDate={r.created_at}/></div>)}</ul></div>
 </div>}

@@ -31,30 +31,30 @@ if (currYear > startYear)
 	</head>
 	<body data-theme="light">
 		<SignedIn>
-            <div class="navbar z-10 shadow-sm bg-neutral flex flex-row border-b-2 border-b-accent sys-font">
+            <div class="navbar z-10 shadow-sm flex flex-row sys-font">
 				<div class="navbar-start">
-					<a class="text-neutral-content text-xl" href="/">Photo Album</a>
+					<a class="text-xl" href="/">Photo Album</a>
 				</div>
 				<div class="navbar-end">
-					<SignOutButton asChild><button class="btn btn-secondary">Sign Out</button></SignOutButton>
+					<SignOutButton asChild><button class="btn btn-primary">Sign Out</button></SignOutButton>
 				</div>
 			</div>
         </SignedIn>
         <slot/>
-		<footer class="footer sm:footer-horizontal bg-neutral p-10 border-t-2 border-t-accent sys-font">
+		<footer class="footer sm:footer-horizontal p-10 sys-font">
 			<aside>
-				<h3 class="uppercase font-bold text-neutral-content">Photo Album</h3>
-				<p class="text-xs lg:text-sm text-neutral-content">&copy; {timeSpan}, Helen McKay. All Rights Reserved.</p>
-				<p class="text-xs lg:text-sm text-neutral-content">Built with love by Helen McKay.</p>
+				<h3 class="uppercase font-bold">Photo Album</h3>
+				<p class="text-xs lg:text-sm">&copy; {timeSpan}, Helen McKay. All Rights Reserved.</p>
+				<p class="text-xs lg:text-sm">Built with love by Helen McKay.</p>
 			</aside>
 			<SignedOut>
-				<a href="text-neutral-content link text-xs lg:text-sm" href="/privacy">Privacy Policy and Terms of Use</a>
+				<a href="link text-xs lg:text-sm" href="/privacy">Privacy Policy and Terms of Use</a>
 			</SignedOut>
 			<SignedIn>
 				<nav>
-					<h3 class="uppercase font-bold text-neutral-content">Links</h3>
-					<a class="text-neutral-content link text-xs lg:text-sm" href="/info">About This Project</a>
-					<a class="text-neutral-content link text-xs lg:text-sm" href="/privacy">Privacy Policy and Terms of Use</a>
+					<h3 class="uppercase font-bold">Links</h3>
+					<a class="link text-xs lg:text-sm" href="/info">About This Project</a>
+					<a class="link text-xs lg:text-sm" href="/privacy">Privacy Policy and Terms of Use</a>
 				</nav>
 			</SignedIn>
 		</footer>		

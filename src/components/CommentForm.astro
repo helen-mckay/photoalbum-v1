@@ -11,12 +11,12 @@ const result = Astro.getActionResult(actions.addComment);
 // we could use the result value above for something, at the moment there's no need, though
 ---
 
-<div class="w-[250px] md:w-[350px] lg:w-[450px] p-5 bg-neutral h-[250px] rounded shadow-md">
-    <h3 class="form text-neutral-content">Add a comment</h3>
+<div class="w-[250px] md:w-[350px] lg:w-[450px] p-5 h-[250px] rounded shadow-md">
+    <h3 class="form">Add a comment</h3>
     <form id=`${uuid}-form` method="POST" action={actions.addComment} class="form w-full gap-2 pt-1 flex flex-col">
         <input type="text" name="post_uuid" hidden value={uuid}/>
-        <input required class="input w-[100%] bg-neutral-content text-neutral" type="text" name="comment_author" placeholder="Name"/>
-        <textarea required class="textarea w-full bg-neutral-content text-neutral" name="comment_body" placeholder="Message"/>
+        <input required class="input w-[100%]" type="text" name="comment_author" placeholder="Name"/>
+        <textarea required class="textarea w-full" name="comment_body" placeholder="Message"/>
         <input class="btn btn-primary" type="submit"/>
     </form>
 </div>

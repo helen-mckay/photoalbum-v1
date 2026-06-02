@@ -55,9 +55,9 @@
 }
 
 .slide-a {
- background-color: var(--color-base-200);
+ background-color: var(--color-zinc-400);
 }
 
 .slide-b {
-  background-color: var(--color-base-300);
+  background-color: var(--color-zinc-300);
 }
